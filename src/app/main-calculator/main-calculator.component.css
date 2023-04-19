@@ -1,0 +1,27 @@
+.container {
+  justify-content: center;
+}
+.input {
+  margin-top: 1rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.calculate-button {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  font-family: consolas;
+  margin-top: 12px;
+  letter-spacing: 2px;
+  justify-content: center;
+  align-items: center;
+}
+.error {
+  font-size: 0.7rem;
+}

@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="input" [formGroup]="calcForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Rate</mat-label>
+      <input matInput formControlName="rate" type="number" placeholder="Enter rate" required />
+      <mat-error class="error">*Please enter rate</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Tax</mat-label>
+      <input matInput formControlName="tax" placeholder="Enter tax" type="number" />
+      <mat-error class="error">*Please enter tax</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Discount</mat-label>
+      <input
+        matInput
+        formControlName="discount"
+        placeholder="Enter discount"
+        type="number"
+      />
+      <mat-error class="error">*Please enter discount</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Quantity</mat-label>
+      <input
+        matInput
+        formControlName="qty"
+        placeholder="Enter quantity"
+        type="number"
+      />
+      <mat-error class="error">*Please enter quantity</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Free Quantity</mat-label>
+      <input matInput formControlName="free" placeholder="Enter free quantity" type="number" />
+      <mat-error class="error">*Please enter free quantity</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Return Quantity</mat-label>
+      <input
+        matInput
+        formControlName="return"
+        placeholder="Enter return quantity"
+        type="number"
+      />
+      <mat-error class="error">*Please enter return quantity</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="calculate-button">
+    <button mat-raised-button color="primary" [disabled]="calcForm.invalid" (click)="calculate()">
+      Calculate
+    </button>
+    <button mat-raised-button color="primary" (click)="clear()">Clear</button>
+  </div>
+
+  <div class="result" *ngIf="value$ | async as value">
+    <p>Return Quantity: {{ value.return_qty }}</p>
+    <p>Return Free: {{ value.return_free }}</p>
+    <p>Total Return Value: {{ value.amount }}</p>
+  </div>
+</div>
